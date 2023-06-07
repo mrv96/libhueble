@@ -12,7 +12,7 @@ Control Philips Hue light by bluetooth in python
 
 ## Pairing
 
-1. In the Hue BT app, go to **Settings** > **Voice Assistants** > **Amazon Alexa** and tap **Make visible**.¹
+1. In the Hue BT app, go to **Settings** > **Voice Assistants** > **Amazon Alexa** and tap **Make visible**.
 2. Open the bluetoothctl shell:
    ```
    sudo bluetoothctl
@@ -31,22 +31,22 @@ Control Philips Hue light by bluetooth in python
 
 ## Usage
 
-# Install the requirements
+### Install the requirements
 
 Install the required packages from requirements.txt
 
-# Import the library
+### Import the library
 
 Import the library into your python code
 
-# Connect to a lamp
+### Connect to a lamp
 
 ```
 lamp = lamp('BLUETOOTH_MAC_ADDRESS')
 await lamp.connect()
 ```
 
-# Get lamp proporties
+### Get lamp proporties
 
 ```
 try:
@@ -59,7 +59,7 @@ try:
    await lamp.get_color_rgb()
 ```
 
-# Change lamp proporties
+### Change lamp proporties
 
 ```
 try:
@@ -79,4 +79,4 @@ lamp.disconnect()
 ## Compatibility
 
 - [X] Linux
-- [?] Windows - Strange behaviour, sometimes doesnt work
+- [] Windows - Strange behaviour, sometimes doesn't work
