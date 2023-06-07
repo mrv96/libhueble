@@ -79,4 +79,4 @@ lamp.disconnect()
 ## Compatibility
 
 - [X] Linux
-- [] Windows - Strange behaviour, sometimes doesn't work
+- [ ] Windows - Strange behaviour, sometimes doesn't work
