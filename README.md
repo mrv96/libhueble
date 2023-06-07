@@ -1,6 +1,14 @@
 # libhueble
 
-A library for controlling your Bluetooth-capable Philips Hue lights directly using Bluetooth Low Energy (BLE) without a bridge.
+Control Philips Hue light by bluetooth in python
+
+## Requirements
+
+- Bluetooth
+- Python
+   - bleak
+   - rxby
+   - struck
 
 ## Pairing
 
@@ -21,32 +29,54 @@ A library for controlling your Bluetooth-capable Philips Hue lights directly usi
    ```
 6. Done, you can now pair the light to your phone again.
 
-¹ [Thanks to @danieleds.](https://github.com/alexhorn/laemp/issues/1)
-
 ## Usage
 
+# Install the requirements
+
+Install the required packages from requirements.txt
+
+# Import the library
+
+Import the library into your python code
+
+# Connect to a lamp
+
 ```
-lamp = Lamp('00:11:22:33:44:55')
+lamp = lamp('BLUETOOTH_MAC_ADDRESS')
 await lamp.connect()
+```
+
+# Get lamp proporties
+
+```
+try:
+   await lamp.is_connected()
+   await lamp.get_model()
+   await lamp.get_power()
+   await lamp.get_brightness()
+   await lamp.get_temperature()
+   await lamp.get_color_xy()
+   await lamp.get_color_rgb()
+```
+
+# Change lamp proporties
+
+```
 try:
    await lamp.set_power(True)
    await lamp.set_brightness(1.0)
+   await lamp.set_temperature(1.0)
    await lamp.set_color_rgb(1.0, 0.0, 0.0)
-finally:
-   await lamp.disconnect()
+   await lamp.set_color_xy(1.0, 1.0)
+```
+
+# Disconnect lamp
+
+```
+lamp.disconnect()
 ```
 
 ## Compatibility
 
-Works on Raspbian Buster.
-
-Sometimes it also works on Windows 10 20H2, but it is very flaky.
-
-## Credits
-
-This is pieced together from the reverse engineering efforts of other people on the internet.
-
-Sources:
-* https://github.com/npaun/philble
-* https://gist.github.com/shinyquagsire23/f7907fdf6b470200702e75a30135caf3
-* https://www.reddit.com/r/Hue/comments/eq0y3y/philips_hue_bluetooth_developer_documentation
+- [X] Linux
+- [?] Windows - Strange behaviour, sometimes doesnt work
