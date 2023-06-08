@@ -70,7 +70,7 @@ try:
    await lamp.set_color_xy(1.0, 1.0)
 ```
 
-# Disconnect lamp
+### Disconnect lamp
 
 ```
 lamp.disconnect()
